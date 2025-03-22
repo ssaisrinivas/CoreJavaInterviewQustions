@@ -1,26 +1,26 @@
 package com.sai.practice;
 
+import java.util.HashMap;
+
 public class Test {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		occeranceOfCharecter("Sai srinivas");
+	String str = "ssaisrinivas22ssaismmetaakkldsp";
+
+	HashMap<Character, Integer> charCount = new HashMap<>();
+
+	char[] characters = str.toCharArray();
+
+	for (char c : characters) {
+
+	    if (charCount.containsKey(c)) {
+		charCount.put(c, charCount.get(c) + 1);
+	    } else {
+		charCount.put(c, 1);
+	    }
 	}
+	System.out.println(charCount);
 
-	public static void occeranceOfCharecter(String str) {
-
-		char[] str1 = str.toCharArray();
-		int count = 0;
-		for (int i = 0; i < str1.length; i++) {
-			for (int j = 0; j < str1.length; j++) {
-
-				if (str1[i] == str1[j]) {
-					count++;
-				}
-			}
-			System.out.println("Charecter   " + str1[i] + " Count is :  " + count);
-			count = 0;
-		}
-	}
-
+    }
 }
